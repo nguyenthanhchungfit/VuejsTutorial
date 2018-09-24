@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>v-bind v-once v-html</title>
+</head>
+
+<body>
+
+    <div id="obj">
+        <p v-html="testMaHtml"></p> <!-- load html -->
+        <p v-once> {{title}} - {{ showPost() }}</p> <!-- nạp giá trị gốc trước khi bị thay đổi bởi hàm -->
+        <p>{{ showPost() }}</p>
+        <a v-bind:href="link">My Profile FB</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // Tất cả dữ liệu thô truyền qua HTML ở dữ liệu thô
+        new Vue({
+            el : "#obj",
+            data : {
+                content : 'welcome to vuejs',
+                title : 'Vuejs',
+                link : 'https://www.facebook.com/nguyenthanhchunghcmus',
+                testMaHtml : '<a href="https://www.facebook.com/nguyenthanhchunghcmus">GetPassword</a>'
+            },
+            methods : {
+                sayHello : function(){
+                    document.write("Hello vuejs");
+                },
+                showPost : function(){
+                    this.title = "new title";
+                    return this.title; // truy xuất this (trỏ tới property data)
+                }
+            }
+        });
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>event mouse move and click</title>
+</head>
+
+<body>
+
+    <div id="obj">
+        <div v-on:mouseover="tinhToaDo">
+            <h1>Bấm vào nút để tăng giá trị</h1>
+            <button v-on:click="tangGiaTri">Ấn đi</button>
+            <p>Giá trị: {{ dem }} <span v-on:mouseover.stop=""> Dung su kien</span></p>
+            <p>Tọa độ của chuột: ({{x}}, {{y}}) </p>
+            
+        </div>
+
+        <div class="">
+            <input type="text" @keyup.enter="keyboardEvent">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // Tất cả dữ liệu thô truyền qua HTML ở dữ liệu thô
+        new Vue({
+            el: "#obj",
+            data: {
+                dem: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                tangGiaTri: function () {
+                    this.dem++;
+                },
+                tinhToaDo: function (event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                dungChuot : function(event){
+                    event.stopPropagation(); // dừng diễn biến của event mouseover
+                },
+                keyboardEvent : function(){
+                    alert("Hello I'm typing");
+                }
+            }
+        });
+    </script>
+</body>
+
+
+</html>
