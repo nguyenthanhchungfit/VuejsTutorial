@@ -1,0 +1,102 @@
+[
+    {
+        "source": "hello",
+        "destination": "xin chào"
+    },
+    {
+        "source": "dinner",
+        "destination": "bữa tối"
+    },
+    {
+        "source": "afternoon",
+        "destination": "buổi chiều"
+    },
+    {
+        "source": "morning",
+        "destination": "buổi sáng"
+    },
+    {
+        "source": "world",
+        "destination": "thế giới"
+    },
+    {
+        "source": "mom",
+        "destination": "mẹ"
+    },
+    {
+        "source": "go",
+        "destination": "đi"
+    },
+    {
+        "source": "gift",
+        "destination": "quà tặng"
+    },
+    {
+        "source": "book",
+        "destination": "sách"
+    },
+    {
+        "source": "pen",
+        "destination": "bút mực"
+    },
+    {
+        "source": "cancer",
+        "destination": "bệnh ung thư"
+    },
+    {
+        "source": "cancel",
+        "destination": "hủy bỏ"
+    },
+    {
+        "source": "delay",
+        "destination": "trì hoãn"
+    },
+    {
+        "source": "bike",
+        "destination": "xe đạp"
+    },
+    {
+        "source": "bus",
+        "destination": "Xe buýt"
+    },
+    {
+        "source": "car",
+        "destination": "xe ô tô"
+    },
+    {
+        "source": "plan",
+        "destination": "kế hoạch"
+    },
+    {
+        "source": "market",
+        "destination": "chợ"
+    },
+    {
+        "source": "supermarket",
+        "destination": "siêu thị"
+    },
+    {
+        "source": "bird",
+        "destination": "chim"
+    },
+    {
+        "source": "dog",
+        "destination": "con chó"
+    },
+    {
+        "source": "cat",
+        "destination": "con mèo"
+    },
+    {
+        "source": "buffalo",
+        "destination": "con trâu"
+    },
+    {
+        "source": "friend",
+        "destination": "bạn bè"
+    },
+    {
+        "source": "light",
+        "destination": "đèn"
+    }
+]

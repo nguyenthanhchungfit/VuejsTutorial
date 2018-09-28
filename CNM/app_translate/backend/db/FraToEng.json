@@ -1,0 +1,102 @@
+[
+    {
+        "destination": "hello",
+        "source": "bonjour"
+    },
+    {
+        "destination": "dinner",
+        "source": "dîner"
+    },
+    {
+        "destination": "afternoon",
+        "source": "après midi"
+    },
+    {
+        "destination": "morning",
+        "source": "matin"
+    },
+    {
+        "destination": "world",
+        "source": "monde"
+    },
+    {
+        "destination": "mom",
+        "source": "maman"
+    },
+    {
+        "destination": "go",
+        "source": "aller"
+    },
+    {
+        "destination": "gift",
+        "source": "cadeau"
+    },
+    {
+        "destination": "book",
+        "source": "livre"
+    },
+    {
+        "destination": "pen",
+        "source": "stylo"
+    },
+    {
+        "destination": "cancer",
+        "source": "cancer"
+    },
+    {
+        "destination": "cancel",
+        "source": "annuler"
+    },
+    {
+        "destination": "delay",
+        "source": "retard"
+    },
+    {
+        "destination": "bike",
+        "source": "bicyclette"
+    },
+    {
+        "destination": "bus",
+        "source": "autobus"
+    },
+    {
+        "destination": "car",
+        "source": "voiture"
+    },
+    {
+        "destination": "plan",
+        "source": "plan"
+    },
+    {
+        "destination": "market",
+        "source": "marché"
+    },
+    {
+        "destination": "supermarket",
+        "source": "supermarché"
+    },
+    {
+        "destination": "bird",
+        "source": "oiseau"
+    },
+    {
+        "destination": "dog",
+        "source": "chien"
+    },
+    {
+        "destination": "cat",
+        "source": "chat"
+    },
+    {
+        "destination": "buffalo",
+        "source": "buffle"
+    },
+    {
+        "destination": "friend",
+        "source": "ami"
+    },
+    {
+        "destination": "light",
+        "source": "lumière"
+    }
+]
