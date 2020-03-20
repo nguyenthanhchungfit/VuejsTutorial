@@ -1,0 +1,39 @@
+In-template expressions are very convenient, but they are meant for simple operations. 
+    Putting too much logic in your templates can make them bloated and hard to maintain. 
+    For example:
+    <div id="example">
+        {{ message.split('').reverse().join('') }}
+    </div>
+
+    That’s why for any complex logic, you should use a computed property.
+    Here we have declared a computed property reversedMessage. The function we provided will be used as the getter function for the property vm.reversedMessage:
+        console.log(vm.reversedMessage) // => 'olleH'
+        vm.message = 'Goodbye'
+        console.log(vm.reversedMessage) // => 'eybdooG'
+
+    And the best part is that we’ve created this dependency relationship declaratively: 
+        the computed getter function has no side effects, which makes it easier to test and understand.
+    
+    * Computed Caching vs Methods
+        Instead of a computed property, we can define the same function as a method. 
+            For the end result, the two approaches are indeed exactly the same. 
+            However, the difference is that computed properties are cached based on their reactive dependencies.
+
+        A computed property will only re-evaluate when some of its reactive dependencies have changed.
+        This means as long as message has not changed, multiple access to the reversedMessage computed 
+            property will immediately return the previously computed result without having to run the function again.
+        
+        Why do we need caching? Imagine we have an expensive computed property A, which requires looping through a huge Array 
+            and doing a lot of computations. Then we may have other computed properties that in turn depend on A.
+            Without caching, we would be executing A’s getter many more times than necessary! 
+            In cases where you do not want caching, use a method instead.
+
+    * Computed vs Watched Property
+        Vue does provide a more generic way to observe and react to data changes on a Vue instance: watch properties.
+        When you have some data that needs to change based on some other data, it is tempting to overuse watch.
+        However, it is often a better idea to use a computed property rather than an imperative watch callback. 
+        Consider this example:
+
+    * Computed Setter
+        Computed properties are by default getter-only, but you can also provide a setter when you need it:
+        Now when you run vm.fullName = 'John Doe', the setter will be invoked and vm.firstName and vm.lastName will be updated accordingly.

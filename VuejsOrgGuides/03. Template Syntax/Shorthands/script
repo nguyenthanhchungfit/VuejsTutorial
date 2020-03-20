@@ -1,0 +1,24 @@
+The v- prefix serves as a visual cue for identifying Vue-specific attributes in your templates. 
+    This is useful when you are using Vue.js to apply dynamic behavior to some existing markup, but can feel verbose for some frequently used directives. 
+    At the same time, the need for the v- prefix becomes less important when you are building a SPA, where Vue manages every template. 
+    Therefore, Vue provides special shorthands for two of the most often used directives, v-bind and v-on:
+
+    v-bind Shorthand
+        <!-- full syntax -->
+        <a v-bind:href="url"> ... </a>
+
+        <!-- shorthand -->
+        <a :href="url"> ... </a>
+
+        <!-- shorthand with dynamic argument (2.6.0+) -->
+        <a :[key]="url"> ... </a>
+    
+    v-on Shorthand
+        <!-- full syntax -->
+        <a v-on:click="doSomething"> ... </a>
+
+        <!-- shorthand -->
+        <a @click="doSomething"> ... </a>
+
+        <!-- shorthand with dynamic argument (2.6.0+) -->
+        <a @[event]="doSomething"> ... </a>

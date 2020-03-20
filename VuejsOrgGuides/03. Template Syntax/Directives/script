@@ -1,0 +1,47 @@
+Directives are special attributes with the v- prefix. Directive attribute values are expected to be a single JavaScript expression.
+    <p v-if="seen">Now you see me</p>
+
+* Arguments
+    Some directives can take an “argument”, denoted by a colon after the directive name. For example, the v-bind directive is used to reactively update an HTML attribute:
+        <a v-bind:href="url"> ... </a>
+        Here href is the argument, which tells the v-bind directive to bind the element’s href attribute to the value of the expression url.
+
+    Another example is the v-on directive, which listens to DOM events:
+        <a v-on:click="doSomething"> ... </a>
+    
+* Dynamic Arguments (New in 2.6.0+)
+    Starting in version 2.6.0, it is also possible to use a JavaScript expression in a directive argument by wrapping it with square brackets:
+        <!--
+            Note that there are some constraints to the argument expression, as explained
+            in the "Dynamic Argument Expression Constraints" section below.
+        -->
+        <a v-bind:[attributeName]="url"> ... </a>
+        Here attributeName will be dynamically evaluated as a JavaScript expression, 
+            and its evaluated value will be used as the final value for the argument. 
+            For example, if your Vue instance has a data property, attributeName, 
+            whose value is "href", then this binding will be equivalent to v-bind:href.
+
+        <a v-on:[eventName]="doSomething"> ... </a>
+
+    Dynamic Argument Value Constraints
+        Dynamic arguments are expected to evaluate to a string, with the exception of null. 
+            The special value null can be used to explicitly remove the binding. Any other non-string value will trigger a warning.
+    
+    Dynamic Argument Expression Constraints
+        Dynamic argument expressions have some syntax constraints because certain characters, such as spaces and quotes, are invalid inside HTML attribute names. 
+            For example, the following is invalid:
+            <!-- This will trigger a compiler warning. -->
+            <a v-bind:['foo' + bar]="value"> ... </a>
+
+    When using in-DOM templates (templates directly written in an HTML file), you should also avoid naming keys with uppercase characters, as browsers will coerce attribute names into lowercase:
+        <!--
+            This will be converted to v-bind:[someattr] in in-DOM templates.
+            Unless you have a "someattr" property in your instance, your code won't work.
+        -->
+        <a v-bind:[someAttr]="value"> ... </a>
+
+* Modifiers
+    Modifiers are special postfixes denoted by a dot, which indicate that a directive should be bound in some special way. 
+        For example, the .prevent modifier tells the v-on directive to call event.preventDefault() on the triggered event:
+        <form v-on:submit.prevent="onSubmit"> ... </form>
+        

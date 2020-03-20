@@ -1,0 +1,16 @@
+* Object Syntax
+    We can pass an object to v-bind:class to dynamically toggle classes:
+        <div v-bind:class="{ active: isActive }"></div>
+
+        <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }"></div>
+
+* Array Syntax
+    We can pass an array to v-bind:class to apply a list of classes:
+        <div v-bind:class="[activeClass, errorClass]"></div>
+        <div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+        <div v-bind:class="[{ active: isActive }, errorClass]"></div>
+
+* With Components
+    When you use the class attribute on a custom component, those classes will be added to the component’s root element. 
+        Existing classes on this element will not be overwritten.
+    

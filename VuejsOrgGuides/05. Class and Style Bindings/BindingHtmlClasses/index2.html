@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BindingHTML - ArraySyntax</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-bind:class="[activeClass, errorClass]">AAA</div>
+        <div v-bind:class="[isActive ? activeClass : '', errorClass]">BBB</div>
+        <div v-bind:class="[{ active: isActive }, errorClass]">CCC</div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                isActive : true,
+                activeClass: 'active',
+                errorClass: 'text-danger'
+            }
+        })
+    </script>
+</body>
+
+</html>

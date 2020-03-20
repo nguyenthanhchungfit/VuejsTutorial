@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span v-once>This will never change: {{ msg }}</span>
+        <p>Using mustaches: {{ rawHtml }}</p>
+        <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+        <p>The value: {{number + 1}}</p>
+        <p>Are you OK: {{ok ? 'YES' : 'NO'}}</p>
+        <div v-bind:id="'list-' + id"></div>
+    </div>
+
+    
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello Vue!',
+                rawHtml: '<span style="color: red">This should be red.</span>',
+                number: 10,
+                ok : true,
+                id : 1
+            }
+        })
+    </script>
+</body>
+
+</html>

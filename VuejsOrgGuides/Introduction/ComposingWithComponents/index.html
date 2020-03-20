@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+      <ol>
+           <!-- Create an instance of the todo-item component -->
+          <!-- <todo-item></todo-item> -->
+
+          <!--Solution 2-->
+          <todo-item
+            v-for="item in groceryList" 
+            v-bind:todo="item" 
+            v-bind:key="item.id"
+          >
+          </todo-item>
+      </ol>
+    {{ message }}
+  </div>
+
+  <script>
+    // Define a new component called todo-item
+    Vue.component('todo-item', {
+        // The todo-item component now accepts a
+        // "prop", which is like a custom attribute.
+        // This prop is called todo.
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    });
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        groceryList: [
+            {id: 0, text: 'Vegetables'},
+            {id: 1, text: 'Cheeese'},
+            {id: 2, text: 'Whatever else'}
+        ]
+      }
+    })
+  </script>
+</body>
+
+</html>

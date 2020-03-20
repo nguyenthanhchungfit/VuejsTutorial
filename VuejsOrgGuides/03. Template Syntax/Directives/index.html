@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if="seen">Now you see me</p>
+        <p><a v-bind:href="url"> ... </a></p>
+        <p><a v-bind:[attyoutube]="url"> ... </a></p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                seen: true,
+                url: "https://www.youtube.com/watch?v=wRai9bzoFts",
+                attyoutube: 'href'
+            }
+        })
+    </script>
+</body>
+
+</html>
